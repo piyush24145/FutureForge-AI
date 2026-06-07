@@ -261,10 +261,10 @@ function CareerRoadmap() {
         <div className="flex bg-gray-100 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen font-sans">
             <Sidebar />
 
-            <div className="flex-1 min-h-screen flex flex-col overflow-hidden">
+            <div className="flex-1 min-h-screen flex flex-col min-w-0 overflow-hidden">
                 <Topbar />
 
-                <div className="p-8 flex-1 overflow-y-auto bg-grid-pattern max-h-[calc(100vh-64px)]">
+                <div className="p-4 sm:p-8 flex-1 overflow-y-auto bg-grid-pattern max-h-[calc(100vh-64px)]">
                     
                     {/* Header Details */}
                     <div className="mb-8 text-left">

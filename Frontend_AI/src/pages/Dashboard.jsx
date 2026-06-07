@@ -44,9 +44,9 @@ function Dashboard() {
         return (
             <div className="flex bg-gray-100 dark:bg-slate-950 min-h-screen text-slate-800 dark:text-slate-100">
                 <Sidebar />
-                <div className="flex-1 min-h-screen flex flex-col">
+                <div className="flex-1 min-h-screen flex flex-col min-w-0">
                     <Topbar />
-                    <div className="p-8 flex-1 flex items-center justify-center bg-grid-pattern">
+                    <div className="p-4 sm:p-8 flex-1 flex items-center justify-center bg-grid-pattern">
                         <div className="text-center">
                             <div className="animate-spin h-12 w-12 border-4 border-purple-600 border-t-transparent rounded-full mx-auto"></div>
                             <p className="text-slate-550 dark:text-slate-400 mt-4 font-medium">Loading your profile dashboard...</p>
@@ -83,10 +83,10 @@ function Dashboard() {
         <div className="flex bg-gray-100 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen font-sans">
             <Sidebar />
 
-            <div className="flex-1 min-h-screen flex flex-col overflow-hidden">
+            <div className="flex-1 min-h-screen flex flex-col min-w-0 overflow-hidden">
                 <Topbar />
 
-                <div className="p-8 flex-1 overflow-y-auto bg-grid-pattern max-h-[calc(100vh-64px)]">
+                <div className="p-4 sm:p-8 flex-1 overflow-y-auto bg-grid-pattern max-h-[calc(100vh-64px)]">
                     {!resumeData ? (
                         <div className="max-w-2xl mx-auto mt-14 p-10 rounded-3xl bg-white dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200 dark:border-slate-800 hover:border-purple-500/30 transition-all duration-300 shadow-xl relative text-center animate-fade-in-up">
                             {/* Glowing internal decorative light */}
@@ -110,7 +110,7 @@ function Dashboard() {
                         <div className="space-y-8 animate-fade-in-up">
                             
                             {/* Header Row */}
-                            <div className="flex justify-between items-center text-left">
+                            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-left">
                                 <div>
                                     <h1 className="text-3xl font-black text-slate-800 dark:text-white tracking-tight">
                                         Dashboard
@@ -211,61 +211,63 @@ function Dashboard() {
                                             </div>
                                         </div>
 
-                                        <div className="relative pt-6 pb-2">
-                                            <svg viewBox="0 0 500 150" className="w-full h-36 overflow-visible">
-                                                <defs>
-                                                    <linearGradient id="curve-gradient" x1="0" y1="0" x2="1" y2="0">
-                                                        <stop offset="0%" stopColor="#c084fc" />
-                                                        <stop offset="35%" stopColor="#c084fc" />
-                                                        <stop offset="70%" stopColor="#818cf8" />
-                                                        <stop offset="100%" stopColor="#6366f1" />
-                                                    </linearGradient>
-                                                    <linearGradient id="fill-gradient" x1="0" y1="0" x2="0" y2="1">
-                                                        <stop offset="0%" stopColor="#818cf8" stopOpacity="0.12" />
-                                                        <stop offset="100%" stopColor="#818cf8" stopOpacity="0" />
-                                                    </linearGradient>
-                                                </defs>
+                                        <div className="relative pt-6 pb-2 overflow-x-auto scrollbar-thin">
+                                            <div className="min-w-[500px]">
+                                                <svg viewBox="0 0 500 150" className="w-full h-36 overflow-visible">
+                                                    <defs>
+                                                        <linearGradient id="curve-gradient" x1="0" y1="0" x2="1" y2="0">
+                                                            <stop offset="0%" stopColor="#c084fc" />
+                                                            <stop offset="35%" stopColor="#c084fc" />
+                                                            <stop offset="70%" stopColor="#818cf8" />
+                                                            <stop offset="100%" stopColor="#6366f1" />
+                                                        </linearGradient>
+                                                        <linearGradient id="fill-gradient" x1="0" y1="0" x2="0" y2="1">
+                                                            <stop offset="0%" stopColor="#818cf8" stopOpacity="0.12" />
+                                                            <stop offset="100%" stopColor="#818cf8" stopOpacity="0" />
+                                                        </linearGradient>
+                                                    </defs>
 
-                                                <path 
-                                                    d="M 30,110 C 100,110 120,40 180,40 C 240,40 260,80 320,80 C 380,80 400,120 470,120 L 470,150 L 30,150 Z"
-                                                    fill="url(#fill-gradient)"
-                                                    className="opacity-70"
-                                                />
+                                                    <path 
+                                                        d="M 30,110 C 100,110 120,40 180,40 C 240,40 260,80 320,80 C 380,80 400,120 470,120 L 470,150 L 30,150 Z"
+                                                        fill="url(#fill-gradient)"
+                                                        className="opacity-70"
+                                                    />
 
-                                                <path 
-                                                    d="M 30,110 C 100,110 120,40 180,40 C 240,40 260,80 320,80 C 380,80 400,120 470,120"
-                                                    fill="none"
-                                                    stroke="url(#curve-gradient)"
-                                                    strokeWidth="3"
-                                                    strokeLinecap="round"
-                                                    className="animate-draw-path"
-                                                />
+                                                    <path 
+                                                        d="M 30,110 C 100,110 120,40 180,40 C 240,40 260,80 320,80 C 380,80 400,120 470,120"
+                                                        fill="none"
+                                                        stroke="url(#curve-gradient)"
+                                                        strokeWidth="3"
+                                                        strokeLinecap="round"
+                                                        className="animate-draw-path"
+                                                    />
 
-                                                {/* Checkpoint nodes */}
-                                                <g className="cursor-pointer group">
-                                                    <circle cx="30" cy="110" r="5" fill="#c084fc" />
-                                                    <circle cx="30" cy="110" r="11" fill="none" stroke="#c084fc" strokeWidth="1.5" className="animate-ping opacity-30" />
-                                                    <text x="30" y="132" fill="#94a3b8" fontSize="8.5" textAnchor="middle" fontWeight="bold">Skills Dev (90%)</text>
-                                                </g>
+                                                    {/* Checkpoint nodes */}
+                                                    <g className="cursor-pointer group">
+                                                        <circle cx="30" cy="110" r="5" fill="#c084fc" />
+                                                        <circle cx="30" cy="110" r="11" fill="none" stroke="#c084fc" strokeWidth="1.5" className="animate-ping opacity-30" />
+                                                        <text x="30" y="132" fill="#94a3b8" fontSize="8.5" textAnchor="middle" fontWeight="bold">Skills Dev (90%)</text>
+                                                    </g>
 
-                                                <g className="cursor-pointer group">
-                                                    <circle cx="180" cy="40" r="5" fill="#a855f7" />
-                                                    <circle cx="180" cy="40" r="12" fill="none" stroke="#a855f7" strokeWidth="1.5" className="animate-pulse-dot" />
-                                                    <text x="180" y="22" fill="#f1f5f9" fontSize="9" textAnchor="middle" fontWeight="black" className="fill-purple-600 dark:fill-purple-300">Intern Prep (95%)</text>
-                                                </g>
+                                                    <g className="cursor-pointer group">
+                                                        <circle cx="180" cy="40" r="5" fill="#a855f7" />
+                                                        <circle cx="180" cy="40" r="12" fill="none" stroke="#a855f7" strokeWidth="1.5" className="animate-pulse-dot" />
+                                                        <text x="180" y="22" fill="#f1f5f9" fontSize="9" textAnchor="middle" fontWeight="black" className="fill-purple-600 dark:fill-purple-300">Intern Prep (95%)</text>
+                                                    </g>
 
-                                                <g className="cursor-pointer group">
-                                                    <circle cx="320" cy="80" r="5" fill="#818cf8" />
-                                                    <circle cx="320" cy="80" r="11" fill="none" stroke="#818cf8" strokeWidth="1.5" className="animate-ping opacity-35" />
-                                                    <text x="320" y="62" fill="#94a3b8" fontSize="8.5" textAnchor="middle" fontWeight="bold">Portfolio (60%)</text>
-                                                </g>
+                                                    <g className="cursor-pointer group">
+                                                        <circle cx="320" cy="80" r="5" fill="#818cf8" />
+                                                        <circle cx="320" cy="80" r="11" fill="none" stroke="#818cf8" strokeWidth="1.5" className="animate-ping opacity-35" />
+                                                        <text x="320" y="62" fill="#94a3b8" fontSize="8.5" textAnchor="middle" fontWeight="bold">Portfolio (60%)</text>
+                                                    </g>
 
-                                                <g className="cursor-pointer group">
-                                                    <circle cx="470" cy="120" r="5" fill="#6366f1" />
-                                                    <circle cx="470" cy="120" r="11" fill="none" stroke="#6366f1" strokeWidth="1.5" className="animate-ping opacity-30" />
-                                                    <text x="470" y="142" fill="#94a3b8" fontSize="8.5" textAnchor="middle" fontWeight="bold">Full-Time (20%)</text>
-                                                </g>
-                                            </svg>
+                                                    <g className="cursor-pointer group">
+                                                        <circle cx="470" cy="120" r="5" fill="#6366f1" />
+                                                        <circle cx="470" cy="120" r="11" fill="none" stroke="#6366f1" strokeWidth="1.5" className="animate-ping opacity-30" />
+                                                        <text x="470" y="142" fill="#94a3b8" fontSize="8.5" textAnchor="middle" fontWeight="bold">Full-Time (20%)</text>
+                                                    </g>
+                                                </svg>
+                                            </div>
                                         </div>
                                     </div>
 

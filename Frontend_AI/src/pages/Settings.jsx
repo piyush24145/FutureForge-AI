@@ -157,9 +157,9 @@ function Settings() {
         return (
             <div className="flex">
                 <Sidebar />
-                <div className="flex-1 bg-gray-100 min-h-screen flex flex-col">
+                <div className="flex-1 bg-gray-100 min-h-screen flex flex-col min-w-0">
                     <Topbar />
-                    <div className="p-8 flex-1 flex items-center justify-center">
+                    <div className="p-4 sm:p-8 flex-1 flex items-center justify-center">
                         <div className="text-center">
                             <div className="animate-spin h-12 w-12 border-4 border-purple-600 border-t-transparent rounded-full mx-auto"></div>
                             <p className="text-gray-500 mt-4 font-medium">Loading preferences...</p>
@@ -174,11 +174,11 @@ function Settings() {
         <div className="flex">
             <Sidebar />
 
-            <div className="flex-1 bg-gray-100 min-h-screen flex flex-col">
+            <div className="flex-1 bg-gray-100 min-h-screen flex flex-col min-w-0">
                 <Topbar />
 
-                <div className="p-8 flex-1">
-                    <div className="flex justify-between items-center mb-6">
+                <div className="p-4 sm:p-8 flex-1">
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
                         <div>
                             <h1 className="text-3xl font-bold">Settings</h1>
                             <p className="text-gray-600 mt-2">Manage your account preferences.</p>

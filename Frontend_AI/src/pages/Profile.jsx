@@ -141,9 +141,9 @@ function Profile() {
         return (
             <div className="flex">
                 <Sidebar />
-                <div className="flex-1 bg-gray-100 dark:bg-slate-950 min-h-screen flex flex-col">
+                <div className="flex-1 bg-gray-100 dark:bg-slate-950 min-h-screen flex flex-col min-w-0">
                     <Topbar />
-                    <div className="p-8 flex-1 flex items-center justify-center bg-grid-pattern">
+                    <div className="p-4 sm:p-8 flex-1 flex items-center justify-center bg-grid-pattern">
                         <div className="text-center">
                             <div className="animate-spin h-14 w-14 border-4 border-purple-600 border-t-transparent rounded-full mx-auto shadow-lg"></div>
                             <p className="text-gray-500 dark:text-slate-400 mt-5 font-semibold text-lg animate-pulse">
@@ -179,13 +179,13 @@ function Profile() {
     const offset = circumference - (readinessScore / 100) * circumference;
 
     return (
-        <div className="flex bg-gray-100 dark:bg-slate-950 min-h-screen">
+        <div className="flex bg-gray-105 dark:bg-slate-955 min-h-screen">
             <Sidebar />
 
-            <div className="flex-1 min-h-screen flex flex-col overflow-hidden">
+            <div className="flex-1 min-h-screen flex flex-col min-w-0 overflow-hidden">
                 <Topbar />
 
-                <div className="p-8 flex-1 bg-grid-pattern overflow-y-auto max-h-[calc(100vh-64px)]">
+                <div className="p-4 sm:p-8 flex-1 bg-grid-pattern overflow-y-auto max-h-[calc(100vh-64px)]">
                     
                     {/* Glassmorphic Hero Banner Block */}
                     <div className="relative rounded-3xl p-8 bg-gradient-to-r from-purple-600 via-indigo-600 to-indigo-800 text-white shadow-xl overflow-hidden border border-purple-500/25 animate-fade-in-up">
