@@ -77,23 +77,28 @@ function DashboardPreview() {
 
                 {/* Dashboard Frame */}
                 <div className="mt-12 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 rounded-3xl shadow-2xl overflow-hidden animate-fade-in-up">
-                    <div className="grid md:grid-cols-12 min-h-[500px]">
+                    <div className="grid grid-cols-1 md:grid-cols-12 min-h-[500px]">
                         
                         {/* Interactive Preview Sidebar */}
-                        <div className="md:col-span-3 bg-slate-950 text-white p-6 flex flex-col justify-between border-r border-slate-900">
+                        <div className="col-span-12 md:col-span-3 bg-slate-950 text-white p-4 md:p-6 flex flex-col md:justify-between border-b md:border-b-0 md:border-r border-slate-900">
                             <div>
-                                <div className="flex items-center gap-2.5 mb-8">
-                                    <span className="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white text-sm font-black shadow-md shadow-purple-500/20">
-                                        F
-                                    </span>
-                                    <span className="font-black text-lg tracking-tight">FutureForge <span className="font-light text-slate-400">AI</span></span>
+                                <div className="flex items-center gap-2.5 mb-4 md:mb-8 justify-between md:justify-start w-full">
+                                    <div className="flex items-center gap-2.5">
+                                        <span className="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white text-sm font-black shadow-md shadow-purple-500/20">
+                                            F
+                                        </span>
+                                        <span className="font-black text-lg tracking-tight">FutureForge <span className="font-light text-slate-400">AI</span></span>
+                                    </div>
+                                    <div className="md:hidden text-[10px] text-slate-500 font-mono">
+                                        Demo sandbox
+                                    </div>
                                 </div>
 
-                                <ul className="space-y-2">
-                                    <li>
+                                <ul className="flex md:flex-col gap-2 overflow-x-auto md:overflow-x-visible pb-2 md:pb-0 scrollbar-none">
+                                    <li className="shrink-0 md:w-full">
                                         <button
                                             onClick={() => setActiveTab("dashboard")}
-                                            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all duration-300 cursor-pointer ${
+                                            className={`w-auto md:w-full flex items-center gap-3 px-3.5 py-2.5 md:px-4 md:py-3 rounded-xl text-xs md:text-sm font-bold transition-all duration-300 cursor-pointer whitespace-nowrap ${
                                                 activeTab === "dashboard"
                                                     ? "bg-purple-600 text-white shadow-md shadow-purple-600/20"
                                                     : "text-slate-400 hover:bg-slate-900 hover:text-white"
@@ -103,10 +108,10 @@ function DashboardPreview() {
                                             Overview
                                         </button>
                                     </li>
-                                    <li>
+                                    <li className="shrink-0 md:w-full">
                                         <button
                                             onClick={() => setActiveTab("resume")}
-                                            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all duration-300 cursor-pointer ${
+                                            className={`w-auto md:w-full flex items-center gap-3 px-3.5 py-2.5 md:px-4 md:py-3 rounded-xl text-xs md:text-sm font-bold transition-all duration-300 cursor-pointer whitespace-nowrap ${
                                                 activeTab === "resume"
                                                     ? "bg-purple-600 text-white shadow-md shadow-purple-600/20"
                                                     : "text-slate-400 hover:bg-slate-900 hover:text-white"
@@ -116,10 +121,10 @@ function DashboardPreview() {
                                             Resume Audit
                                         </button>
                                     </li>
-                                    <li>
+                                    <li className="shrink-0 md:w-full">
                                         <button
                                             onClick={() => setActiveTab("roadmap")}
-                                            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all duration-300 cursor-pointer ${
+                                            className={`w-auto md:w-full flex items-center gap-3 px-3.5 py-2.5 md:px-4 md:py-3 rounded-xl text-xs md:text-sm font-bold transition-all duration-300 cursor-pointer whitespace-nowrap ${
                                                 activeTab === "roadmap"
                                                     ? "bg-purple-600 text-white shadow-md shadow-purple-600/20"
                                                     : "text-slate-400 hover:bg-slate-900 hover:text-white"
@@ -129,10 +134,10 @@ function DashboardPreview() {
                                             Roadmap Progress
                                         </button>
                                     </li>
-                                    <li>
+                                    <li className="shrink-0 md:w-full">
                                         <button
                                             onClick={() => setActiveTab("internships")}
-                                            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all duration-300 cursor-pointer ${
+                                            className={`w-auto md:w-full flex items-center gap-3 px-3.5 py-2.5 md:px-4 md:py-3 rounded-xl text-xs md:text-sm font-bold transition-all duration-300 cursor-pointer whitespace-nowrap ${
                                                 activeTab === "internships"
                                                     ? "bg-purple-600 text-white shadow-md shadow-purple-600/20"
                                                     : "text-slate-400 hover:bg-slate-900 hover:text-white"
@@ -142,10 +147,10 @@ function DashboardPreview() {
                                             Matching Internships
                                         </button>
                                     </li>
-                                    <li>
+                                    <li className="shrink-0 md:w-full">
                                         <button
                                             onClick={() => setActiveTab("interview")}
-                                            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all duration-300 cursor-pointer ${
+                                            className={`w-auto md:w-full flex items-center gap-3 px-3.5 py-2.5 md:px-4 md:py-3 rounded-xl text-xs md:text-sm font-bold transition-all duration-300 cursor-pointer whitespace-nowrap ${
                                                 activeTab === "interview"
                                                     ? "bg-purple-600 text-white shadow-md shadow-purple-600/20"
                                                     : "text-slate-400 hover:bg-slate-900 hover:text-white"
@@ -158,19 +163,19 @@ function DashboardPreview() {
                                 </ul>
                             </div>
 
-                            <div className="pt-4 border-t border-slate-900 text-xs text-slate-500">
+                            <div className="hidden md:block pt-4 border-t border-slate-900 text-xs text-slate-500">
                                 Sandboxed Demo User
                             </div>
                         </div>
 
                         {/* Interactive Preview Main Window */}
-                        <div className="md:col-span-9 p-8 flex flex-col justify-between bg-slate-50/45 dark:bg-slate-900/40">
+                        <div className="col-span-12 md:col-span-9 p-4 sm:p-8 flex flex-col justify-between bg-slate-50/45 dark:bg-slate-900/40">
                             
                             {/* OVERVIEW PANEL */}
                             {activeTab === "dashboard" && (
                                 <div className="space-y-8 animate-fade-in-up h-full flex flex-col justify-between">
                                     {/* Stats grid */}
-                                    <div className="grid md:grid-cols-3 gap-5">
+                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5">
                                         <div className="bg-purple-500/10 border border-purple-500/20 p-5 rounded-2xl relative overflow-hidden group hover:scale-[1.01] transition-transform duration-300">
                                             <div className="absolute right-[-10px] bottom-[-10px] text-purple-500/10 text-6xl group-hover:rotate-12 transition-transform duration-500"><FaFileAlt /></div>
                                             <h4 className="font-bold text-xs uppercase tracking-wider text-purple-600 dark:text-purple-400">Resume Score</h4>
@@ -222,8 +227,8 @@ function DashboardPreview() {
                                         </div>
 
                                         {/* SVG Radar Visualizer */}
-                                        <div className="relative shrink-0 flex items-center justify-center p-2 bg-slate-50/50 dark:bg-slate-950/20 rounded-2xl border border-slate-200/30 dark:border-slate-850">
-                                            <svg width="300" height="300" className="overflow-visible select-none">
+                                        <div className="relative w-full max-w-[300px] shrink-0 flex items-center justify-center p-2 bg-slate-50/50 dark:bg-slate-950/20 rounded-2xl border border-slate-200/30 dark:border-slate-850">
+                                            <svg viewBox="0 0 300 300" className="w-full max-w-[300px] h-auto overflow-visible select-none">
                                                 {/* Circular grids */}
                                                 <circle cx="150" cy="150" r="100" fill="none" stroke="currentColor" className="text-slate-200 dark:text-slate-800" strokeWidth="1" strokeDasharray="3 3" />
                                                 <circle cx="150" cy="150" r="75" fill="none" stroke="currentColor" className="text-slate-200 dark:text-slate-800" strokeWidth="1" strokeDasharray="3 3" />
@@ -285,48 +290,50 @@ function DashboardPreview() {
                                             <span className="text-xs font-black text-purple-600 dark:text-purple-400">78% Match</span>
                                         </div>
 
-                                        <table className="w-full text-left text-xs">
-                                            <thead>
-                                                <tr className="text-slate-400 border-b border-slate-100 dark:border-slate-850">
-                                                    <th className="pb-2 font-bold uppercase text-[9px]">Skill Domain</th>
-                                                    <th className="pb-2 font-bold uppercase text-[9px]">Your rating</th>
-                                                    <th className="pb-2 font-bold uppercase text-[9px]">Market demand</th>
-                                                    <th className="pb-2 font-bold uppercase text-[9px] text-right">Match</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody className="divide-y divide-slate-100 dark:divide-slate-850 text-slate-750 dark:text-slate-300">
-                                                <tr>
-                                                    <td className="py-2.5 font-bold">React.js & Frontend</td>
-                                                    <td className="py-2.5">5 / 5 (Expert)</td>
-                                                    <td className="py-2.5">High demand</td>
-                                                    <td className="py-2.5 text-right"><FaCheckCircle className="text-emerald-500 inline text-sm" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="py-2.5 font-bold">Node.js & Express</td>
-                                                    <td className="py-2.5">4 / 5 (Advanced)</td>
-                                                    <td className="py-2.5">High demand</td>
-                                                    <td className="py-2.5 text-right"><FaCheckCircle className="text-emerald-500 inline text-sm" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="py-2.5 font-bold">Relational Databases</td>
-                                                    <td className="py-2.5">3 / 5 (Intermediate)</td>
-                                                    <td className="py-2.5">Medium demand</td>
-                                                    <td className="py-2.5 text-right"><FaCheckCircle className="text-emerald-500 inline text-sm" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="py-2.5 font-bold">Docker Containers</td>
-                                                    <td className="py-2.5">0 / 5 (No rating)</td>
-                                                    <td className="py-2.5">Crucial gap</td>
-                                                    <td className="py-2.5 text-right"><FaTimesCircle className="text-red-500 inline text-sm" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="py-2.5 font-bold">AWS Deployment</td>
-                                                    <td className="py-2.5">1 / 5 (Familiar)</td>
-                                                    <td className="py-2.5">Critical gap</td>
-                                                    <td className="py-2.5 text-right"><FaTimesCircle className="text-red-500 inline text-sm" /></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <div className="overflow-x-auto w-full">
+                                            <table className="w-full text-left text-xs min-w-[340px]">
+                                                <thead>
+                                                    <tr className="text-slate-400 border-b border-slate-100 dark:border-slate-850">
+                                                        <th className="pb-2 font-bold uppercase text-[9px]">Skill Domain</th>
+                                                        <th className="pb-2 font-bold uppercase text-[9px]">Your rating</th>
+                                                        <th className="pb-2 font-bold uppercase text-[9px]">Market demand</th>
+                                                        <th className="pb-2 font-bold uppercase text-[9px] text-right">Match</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody className="divide-y divide-slate-100 dark:divide-slate-850 text-slate-750 dark:text-slate-300">
+                                                    <tr>
+                                                        <td className="py-2.5 font-bold">React.js & Frontend</td>
+                                                        <td className="py-2.5">5 / 5 (Expert)</td>
+                                                        <td className="py-2.5">High demand</td>
+                                                        <td className="py-2.5 text-right"><FaCheckCircle className="text-emerald-500 inline text-sm" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="py-2.5 font-bold">Node.js & Express</td>
+                                                        <td className="py-2.5">4 / 5 (Advanced)</td>
+                                                        <td className="py-2.5">High demand</td>
+                                                        <td className="py-2.5 text-right"><FaCheckCircle className="text-emerald-500 inline text-sm" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="py-2.5 font-bold">Relational Databases</td>
+                                                        <td className="py-2.5">3 / 5 (Intermediate)</td>
+                                                        <td className="py-2.5">Medium demand</td>
+                                                        <td className="py-2.5 text-right"><FaCheckCircle className="text-emerald-500 inline text-sm" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="py-2.5 font-bold">Docker Containers</td>
+                                                        <td className="py-2.5">0 / 5 (No rating)</td>
+                                                        <td className="py-2.5">Crucial gap</td>
+                                                        <td className="py-2.5 text-right"><FaTimesCircle className="text-red-500 inline text-sm" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="py-2.5 font-bold">AWS Deployment</td>
+                                                        <td className="py-2.5">1 / 5 (Familiar)</td>
+                                                        <td className="py-2.5">Critical gap</td>
+                                                        <td className="py-2.5 text-right"><FaTimesCircle className="text-red-500 inline text-sm" /></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
 
                                     {/* CTA feedback box */}

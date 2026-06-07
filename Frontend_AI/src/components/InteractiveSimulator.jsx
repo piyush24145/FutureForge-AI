@@ -262,7 +262,7 @@ function InteractiveSimulator() {
                 </div>
 
                 {/* Simulation Screen */}
-                <div className="col-span-12 md:col-span-8 p-5 flex flex-col justify-between bg-white dark:bg-slate-900/90 relative">
+                <div className="col-span-12 md:col-span-8 p-4 sm:p-5 flex flex-col justify-between bg-white dark:bg-slate-900/90 relative">
                     
                     {/* 1. RESUME AUDITOR SIMULATOR */}
                     {activeTab === "resume" && (
@@ -317,12 +317,12 @@ function InteractiveSimulator() {
                             {isScanDone && (
                                 <div className="flex-1 flex flex-col gap-4 animate-fade-in-up">
                                     {/* Score and Gap Analysis Dashboard */}
-                                    <div className="grid grid-cols-12 gap-3.5">
-                                        <div className="col-span-4 bg-purple-500/10 border border-purple-500/20 rounded-xl p-3 flex flex-col items-center justify-center">
+                                    <div className="grid grid-cols-1 sm:grid-cols-12 gap-3.5">
+                                        <div className="col-span-12 sm:col-span-4 bg-purple-500/10 border border-purple-500/20 rounded-xl p-3 flex flex-col items-center justify-center min-h-[90px] sm:min-h-0">
                                             <span className="text-[10px] uppercase font-bold text-purple-600 dark:text-purple-400">Match Score</span>
                                             <span className="text-3xl font-black text-purple-600 dark:text-purple-400 mt-1">{resumeScore}%</span>
                                         </div>
-                                        <div className="col-span-8 bg-slate-50 dark:bg-slate-950/30 border border-slate-200/50 dark:border-slate-850 rounded-xl p-3">
+                                        <div className="col-span-12 sm:col-span-8 bg-slate-50 dark:bg-slate-950/30 border border-slate-200/50 dark:border-slate-850 rounded-xl p-3">
                                             <div className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 mb-1.5">Identified Gap Areas</div>
                                             <div className="flex flex-wrap gap-1">
                                                 <span className="px-2 py-0.5 rounded-md bg-red-100 dark:bg-red-950/40 text-red-600 dark:text-red-300 text-[10px] font-bold border border-red-200/30 dark:border-red-900/30">Docker</span>
@@ -563,12 +563,12 @@ function InteractiveSimulator() {
 
                             {interviewResult && (
                                 <div className="flex-1 flex flex-col gap-3 animate-fade-in-up">
-                                    <div className="grid grid-cols-12 gap-3.5">
-                                        <div className="col-span-4 bg-purple-500/10 border border-purple-500/20 rounded-xl p-3 flex flex-col items-center justify-center">
+                                    <div className="grid grid-cols-1 sm:grid-cols-12 gap-3.5">
+                                        <div className="col-span-12 sm:col-span-4 bg-purple-500/10 border border-purple-500/20 rounded-xl p-3 flex flex-col items-center justify-center min-h-[90px] sm:min-h-0">
                                             <span className="text-[9px] uppercase font-bold text-purple-600 dark:text-purple-400 text-center">AI Evaluation</span>
                                             <span className="text-3xl font-black text-purple-600 dark:text-purple-400 mt-1">{interviewResult.score} <span className="text-xs text-slate-400 font-light">/10</span></span>
                                         </div>
-                                        <div className="col-span-8 bg-slate-50 dark:bg-slate-950/30 border border-slate-200/50 dark:border-slate-850 rounded-xl p-2.5">
+                                        <div className="col-span-12 sm:col-span-8 bg-slate-50 dark:bg-slate-950/30 border border-slate-200/50 dark:border-slate-850 rounded-xl p-2.5">
                                             <div className="text-[9px] uppercase font-bold text-slate-500 dark:text-slate-400 mb-1">Key Strengths</div>
                                             <ul className="space-y-0.5">
                                                 {interviewResult.strengths.map((st, i) => (

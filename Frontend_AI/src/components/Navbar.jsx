@@ -43,13 +43,13 @@ function Navbar() {
                 {/* Desktop Menu Links */}
                 <div className="hidden md:flex items-center gap-8">
                     <a 
-                        href="#features" 
+                        href="/#features" 
                         className="text-sm font-semibold text-slate-600 dark:text-slate-350 hover:text-purple-600 dark:hover:text-purple-400 transition-colors relative nav-link-underline py-1"
                     >
                         Features
                     </a>
                     <a 
-                        href="#how-it-works" 
+                        href="/#how-it-works" 
                         className="text-sm font-semibold text-slate-600 dark:text-slate-350 hover:text-purple-600 dark:hover:text-purple-400 transition-colors relative nav-link-underline py-1"
                     >
                         How It Works
@@ -100,18 +100,18 @@ function Navbar() {
 
             {/* Mobile Drawer Overlay */}
             {mobileMenuOpen && (
-                <div className="md:hidden mt-4 pt-4 border-t border-slate-100 dark:border-slate-900 flex flex-col gap-4 animate-fade-in-up">
+                <div className="md:hidden mt-4 pt-4 border-t border-slate-100 dark:border-slate-900/60 flex flex-col gap-4 animate-fade-in-up">
                     <a 
-                        href="#features" 
+                        href="/#features" 
                         onClick={() => setMobileMenuOpen(false)}
-                        className="text-sm font-semibold text-slate-600 dark:text-slate-350 hover:text-purple-600 dark:hover:text-purple-400 px-2 py-1.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors"
+                        className="text-sm font-semibold text-slate-600 dark:text-slate-350 hover:text-purple-600 dark:hover:text-purple-400 px-2 py-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors"
                     >
                         Features
                     </a>
                     <a 
-                        href="#how-it-works" 
+                        href="/#how-it-works" 
                         onClick={() => setMobileMenuOpen(false)}
-                        className="text-sm font-semibold text-slate-600 dark:text-slate-350 hover:text-purple-600 dark:hover:text-purple-400 px-2 py-1.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors"
+                        className="text-sm font-semibold text-slate-600 dark:text-slate-350 hover:text-purple-600 dark:hover:text-purple-400 px-2 py-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors"
                     >
                         How It Works
                     </a>

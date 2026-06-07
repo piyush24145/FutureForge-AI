@@ -39,7 +39,7 @@ function Login() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-slate-950 relative overflow-hidden font-sans bg-grid-pattern">
+        <div className="min-h-screen flex flex-col items-center justify-center bg-slate-950 relative overflow-y-auto py-16 px-4 font-sans bg-grid-pattern">
             {/* Ambient Spinning backdrop circles */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-purple-600/10 rounded-full filter blur-[120px] animate-spin-slow"></div>

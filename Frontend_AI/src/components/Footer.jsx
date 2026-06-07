@@ -60,7 +60,7 @@ function Footer() {
                 </div>
 
                 {/* Features Column */}
-                <div className="md:col-span-3.5 space-y-5">
+                <div className="md:col-span-3 space-y-5">
                     <h4 className="font-bold text-slate-200 text-sm uppercase tracking-wider">
                         Platform Features
                     </h4>
@@ -85,7 +85,7 @@ function Footer() {
                 </div>
 
                 {/* Connect Column */}
-                <div className="md:col-span-3.5 space-y-5">
+                <div className="md:col-span-4 space-y-5">
                     <h4 className="font-bold text-slate-200 text-sm uppercase tracking-wider">
                         Quick Links
                     </h4>

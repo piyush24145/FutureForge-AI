@@ -38,16 +38,16 @@ function LandingPage() {
                         <p className="text-slate-600 dark:text-slate-405 text-base md:text-lg leading-relaxed max-w-xl">
                             Audit your resume skills gap, build month-by-month roadmaps, search realistic internship opportunities, and practice challenging mock interviews with real-time feedback.
                         </p>
-                        <div className="flex flex-wrap gap-4 pt-2">
+                        <div className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto">
                             <Link 
                                 to="/register" 
-                                className="px-6 md:px-8 py-3.5 md:py-4 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-500 hover:from-purple-500 hover:to-indigo-500 text-white rounded-2xl text-sm md:text-base font-bold shadow-lg shadow-purple-500/20 hover:shadow-xl hover:shadow-purple-500/35 hover:-translate-y-0.5 transition-all duration-300 active:scale-[0.98] cursor-pointer"
+                                className="w-full sm:w-auto text-center px-6 md:px-8 py-3.5 md:py-4 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-500 hover:from-purple-500 hover:to-indigo-500 text-white rounded-2xl text-sm md:text-base font-bold shadow-lg shadow-purple-500/20 hover:shadow-xl hover:shadow-purple-500/35 hover:-translate-y-0.5 transition-all duration-300 active:scale-[0.98] cursor-pointer"
                             >
                                 Get Started Free
                             </Link>
                             <Link 
                                 to="/login" 
-                                className="px-6 md:px-8 py-3.5 md:py-4 border border-slate-200 dark:border-slate-800/80 text-slate-700 dark:text-slate-300 rounded-2xl text-sm md:text-base font-bold hover:bg-slate-100/85 dark:hover:bg-slate-900/60 hover:-translate-y-0.5 transition-all duration-300 active:scale-[0.98] cursor-pointer"
+                                className="w-full sm:w-auto text-center px-6 md:px-8 py-3.5 md:py-4 border border-slate-200 dark:border-slate-800/80 text-slate-700 dark:text-slate-300 rounded-2xl text-sm md:text-base font-bold hover:bg-slate-100/85 dark:hover:bg-slate-900/60 hover:-translate-y-0.5 transition-all duration-300 active:scale-[0.98] cursor-pointer"
                             >
                                 Try Interactive Demo
                             </Link>
