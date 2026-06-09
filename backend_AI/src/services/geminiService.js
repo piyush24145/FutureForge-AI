@@ -1,12 +1,29 @@
 const genAI = require("../config/gemini");
 const { cleanAndParseJSON } = require("../utils/jsonHelper");
+const { callOpenRouter } = require('../services/openrouterService');
 
 /**
- * Executes a Gemini API call with sequential fallbacks.
- * If gemini-2.5-flash experiences high demand or is unavailable,
- * it will try gemini-2.0-flash, then gemini-1.5-flash, and so on.
+ * Executes a Gemini API call with sequential fallbacks, but first tries OpenRouter as primary.
+ * If OpenRouter fails (network error, quota, or non-200 response), the function falls back to the
+ * existing Gemini model list.
  */
 const handleGeminiCallWithFallback = async (prompt, responseMimeType = "text", maxOutputTokens = 8192) => {
+    // ---------- OpenRouter primary attempt ----------
+    try {
+        // You can change the default OpenRouter model below as needed.
+        const openModel = "openai/gpt-4o-mini";
+        const openResponse = await callOpenRouter(openModel, [{ role: "user", content: prompt }]);
+        // OpenRouter returns { choices: [{ message: { content: "..." } }] }
+        const openText = openResponse?.choices?.[0]?.message?.content;
+        if (openText) {
+            return openText;
+        }
+    } catch (openErr) {
+        console.warn(`[Gemini Service] OpenRouter fallback failed: ${openErr.message}`);
+        // Continue to Gemini fallbacks.
+    }
+
+    // ---------- Gemini fallbacks (original logic) ----------
     const modelsToTry = [
         "gemini-2.5-flash",
         "gemini-2.0-flash",
